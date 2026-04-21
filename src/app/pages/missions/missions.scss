@@ -49,9 +49,19 @@
 .service-card {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 10px;
-  padding: 28px 28px 32px;
+  overflow: hidden;
+  padding: 0 0 32px;
+
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 24px;
+  }
 
   .card-icon {
+    padding: 0 28px;
     margin-bottom: 20px;
 
     svg {
@@ -66,9 +76,11 @@
     font-weight: 700;
     margin-bottom: 22px;
     color: #fff;
+    padding: 0 28px;
   }
 
   ul {
+    padding: 0 28px;
     list-style: none;
     display: flex;
     flex-direction: column;
