@@ -1,0 +1,104 @@
+<!-- ── HERO ── -->
+<section class="contact-hero">
+  <div class="container">
+    <h1>Contactez-nous</h1>
+    <p>
+      Vous avez la possibilité de nous contacter par mail, via le réseau social
+      de votre choix ou mieux, de prendre rendez-vous et de discuter directement
+      avec un responsable&nbsp;!
+    </p>
+  </div>
+</section>
+
+<!-- ── MAIN CONTENT ── -->
+<section class="contact-body">
+  <div class="container contact-inner">
+
+    <!-- Left — contact links -->
+    <div class="contact-info">
+      <ul class="contact-links">
+        <li>
+          <a href="mailto:contact@idsm.ma">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M2 7l10 7 10-7"/>
+              </svg>
+            </span>
+            Envoyer un email
+          </a>
+        </li>
+        <li>
+          <a href="tel:+212661403238">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </span>
+            Appeller un responsable
+          </a>
+        </li>
+        <li>
+          <a href="http://wa.me/212661403238" target="_blank" rel="noopener noreferrer">
+            <span class="icon">
+              <svg viewBox="0 0 448 512" fill="currentColor">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/>
+              </svg>
+            </span>
+            Discuter sur WhatsApp
+          </a>
+        </li>
+        <li>
+          <a href="https://m.me/" target="_blank" rel="noopener noreferrer">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.91 1.395 5.506 3.584 7.232V22l3.267-1.793c.872.242 1.797.372 2.753.372 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2zm1.02 12.42l-2.55-2.717-4.975 2.717 5.475-5.81 2.613 2.717 4.913-2.717-5.476 5.81z"/>
+              </svg>
+            </span>
+            Echanger sur Messenger
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </span>
+            Collaborer sur LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right — form -->
+    <div class="contact-form-col">
+
+      <div *ngIf="submitted" class="success-msg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+        Merci ! Votre message a bien été envoyé.
+      </div>
+
+      <form *ngIf="!submitted" (ngSubmit)="onSubmit()" #contactForm="ngForm" class="contact-form">
+        <div class="form-row">
+          <input type="text"  placeholder="Nom"    [(ngModel)]="form.nom"    name="nom"    required />
+          <input type="text"  placeholder="Prénom" [(ngModel)]="form.prenom" name="prenom" required />
+        </div>
+        <div class="form-row">
+          <input type="email" placeholder="Email"     [(ngModel)]="form.email"     name="email"     required />
+          <input type="tel"   placeholder="Téléphone" [(ngModel)]="form.telephone" name="telephone" />
+        </div>
+        <input type="text" placeholder="Objet de la demande" [(ngModel)]="form.objet" name="objet" required />
+        <textarea placeholder="Décrivez votre besoin" [(ngModel)]="form.message" name="message" rows="7" required></textarea>
+        <div class="form-submit">
+          <button type="submit" [disabled]="contactForm.invalid">Envoyer</button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</section>

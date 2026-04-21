@@ -1,0 +1,133 @@
+/* ── HERO ── */
+.missions-hero {
+  background: var(--navy);
+  padding: 0 0 70px;
+
+  .hero-wave {
+    line-height: 0;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 90px;
+    }
+  }
+
+  .hero-inner {
+    text-align: center;
+    padding-top: 30px;
+
+    h1 {
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+}
+
+/* ── SERVICE CARDS ── */
+.cards-section {
+  background: var(--navy);
+  padding: 10px 0 70px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 28px 28px 32px;
+
+  .card-icon {
+    margin-bottom: 20px;
+
+    svg {
+      width: 50px;
+      height: 50px;
+      fill: rgba(255, 255, 255, 0.75);
+    }
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    color: #fff;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+
+      .bullet {
+        flex-shrink: 0;
+        margin-top: 3px;
+
+        svg {
+          width: 8px;
+          height: 14px;
+          fill: rgba(255, 255, 255, 0.6);
+        }
+      }
+
+      a, span {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        &:hover { color: #fff; }
+      }
+    }
+  }
+}
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--navy);
+  text-align: center;
+  padding: 10px 0 70px;
+  color: #fff;
+
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto 28px;
+    color: #d0d8f0;
+  }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .cards-grid { grid-template-columns: 1fr; }
+}
