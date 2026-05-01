@@ -1,6 +1,8 @@
 /* ── HERO ── */
 .contact-hero {
-  background: var(--navy);
+  background:
+    linear-gradient(to bottom, rgba(8, 15, 30, 0.78), rgba(8, 15, 30, 0.92)),
+    url('/images/img-bet-22.jpg') center/cover no-repeat;
   padding: 50px 0 60px;
   text-align: center;
   color: #fff;
@@ -22,7 +24,7 @@
 
 /* ── BODY ── */
 .contact-body {
-  background: var(--dark-blue);
+  background: var(--navy-deep);
   padding: 60px 0 80px;
   color: #fff;
 }
@@ -102,7 +104,8 @@
     &::placeholder { color: rgba(255, 255, 255, 0.45); }
 
     &:focus {
-      border-color: var(--green-light);
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
       background: rgba(255, 255, 255, 0.12);
     }
   }
@@ -124,18 +127,18 @@
   margin-top: 4px;
 
   button {
-    background: var(--green);
-    color: #fff;
+    background: var(--gold);
+    color: var(--navy-deep);
     border: none;
     padding: 13px 40px;
     border-radius: 6px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 800;
     cursor: pointer;
     font-family: inherit;
     transition: background 0.2s, opacity 0.2s;
 
-    &:hover:not(:disabled) { background: var(--green-dark); }
+    &:hover:not(:disabled) { background: var(--gold-light); }
 
     &:disabled {
       opacity: 0.45;
