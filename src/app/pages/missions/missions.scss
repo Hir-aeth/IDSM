@@ -3,21 +3,10 @@
   background:
     linear-gradient(to bottom, rgba(8, 15, 30, 0.82), rgba(8, 15, 30, 0.95)),
     url('/images/img-bet-17.jpg') center/cover no-repeat;
-  padding: 0 0 70px;
-
-  .hero-wave {
-    line-height: 0;
-
-    svg {
-      display: block;
-      width: 100%;
-      height: 90px;
-    }
-  }
+  padding: 120px 0 70px;
 
   .hero-inner {
     text-align: center;
-    padding-top: 30px;
 
     h1 {
       font-size: 34px;

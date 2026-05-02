@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { WaveDivider } from '../../shared/wave-divider/wave-divider';
 
 @Component({
   selector: 'app-domaines',
   standalone: true,
-  imports: [RouterLink, WaveDivider],
+  imports: [RouterLink],
   templateUrl: './domaines.html',
   styleUrl: './domaines.scss'
 })
