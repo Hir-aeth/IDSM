@@ -26,18 +26,8 @@
     margin-bottom: 18px;
   }
 
-  .btn-services {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy-deep);
-    border-radius: 6px;
-    padding: 13px 26px;
-    font-size: 15px;
-    font-weight: 800;
+  .btn-cta {
     margin-top: 10px;
-    transition: background 0.2s;
-
-    &:hover { background: var(--gold-light); }
   }
 }
 
@@ -74,14 +64,14 @@
   h4 {
     font-size: 17px;
     font-weight: 700;
-    color: var(--dark-blue);
+    color: var(--navy-deep);
     margin-bottom: 8px;
   }
 
   p {
     font-size: 14px;
     line-height: 1.6;
-    color: #555;
+    color: var(--muted);
   }
 }
 
@@ -127,7 +117,6 @@
 .section-faq {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .faq-item {

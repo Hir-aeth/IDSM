@@ -23,7 +23,7 @@
       font-size: 34px;
       font-weight: 700;
       margin-bottom: 20px;
-      color: #fff;
+      color: var(--white);
     }
 
     p {
@@ -31,7 +31,7 @@
       line-height: 1.7;
       max-width: 900px;
       margin: 0 auto;
-      color: rgba(255, 255, 255, 0.85);
+      color: var(--text-light);
     }
   }
 }
@@ -44,7 +44,7 @@
 
 .cards-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -78,7 +78,7 @@
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 22px;
-    color: #fff;
+    color: var(--white);
     padding: 0 28px;
   }
 
@@ -106,7 +106,7 @@
       }
 
       a, span {
-        color: rgba(255, 255, 255, 0.85);
+        color: var(--text-light);
         font-size: 15px;
         line-height: 1.5;
       }
@@ -125,7 +125,7 @@
   background: var(--navy-deep);
   text-align: center;
   padding: 10px 0 70px;
-  color: #fff;
+  color: var(--white);
 
   h2 {
     font-size: 30px;
@@ -138,11 +138,15 @@
     line-height: 1.7;
     max-width: 750px;
     margin: 0 auto 28px;
-    color: #d0d8f0;
+    color: var(--text-light);
   }
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 900px) {
+@media (max-width: 960px) {
+  .cards-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
   .cards-grid { grid-template-columns: 1fr; }
 }

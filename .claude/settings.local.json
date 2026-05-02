@@ -4,7 +4,8 @@
       "Bash(curl -s -L -A 'Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36' -o img-bet-11.jpg https://axial-ingenierie.com/wp-content/uploads/2023/11/Bureau-detudes-techniques-en-batiment-et-travaux-publics-11.jpg)",
       "Bash(npm audit *)",
       "Bash(npm show *)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(npx ng *)"
     ]
   }
 }
