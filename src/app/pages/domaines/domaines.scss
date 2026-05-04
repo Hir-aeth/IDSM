@@ -97,9 +97,13 @@
     padding: 20px;
 
     .domaine-icon {
-      font-size: 24px;
       color: var(--gold);
       margin-bottom: 10px;
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
     }
 
     h3 {

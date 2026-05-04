@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './shared/navbar/navbar';
 import { Footer } from './shared/footer/footer';
@@ -6,10 +6,16 @@ import { Footer } from './shared/footer/footer';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Navbar, Footer],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  templateUrl: './app.html'
 })
 export class App {
+  showScrollTop = false;
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.showScrollTop = window.scrollY > 300;
+  }
+
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

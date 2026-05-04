@@ -5,14 +5,10 @@
 :root {
   --navy-deep: #080f1e;
   --navy: #0f1f3d;
-  --navy-mid: #162646;
   --gold: #c9a84c;
   --gold-light: #e4c97a;
-  --ink: #162033;
   --muted: #5a6680;
-  --line: #e4e9f2;
   --surface: #f7f9fc;
-  --text-dark: #333333;
   --white: #ffffff;
   --text-light: rgba(255, 255, 255, 0.72);
   --text-muted: rgba(255, 255, 255, 0.45);
@@ -38,7 +34,7 @@ section[id] {
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  color: var(--ink);
+  color: #162033;
   background: #fff;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -139,7 +135,14 @@ a { text-decoration: none; color: inherit; }
   font-weight: 800;
   z-index: 999;
   box-shadow: 0 6px 20px rgba(201, 168, 76, 0.35);
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.2s, opacity 0.3s, visibility 0.3s;
+  opacity: 0;
+  visibility: hidden;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
 
   &:hover {
     background: var(--gold-light);

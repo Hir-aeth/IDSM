@@ -724,9 +724,14 @@
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: var(--gold-light);
     transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
   }
 
   svg {
@@ -735,6 +740,30 @@
     fill: none;
     stroke: currentColor;
     stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.success-msg {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.28);
+  border-radius: 10px;
+  padding: 22px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+
+  svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 2.5;
     stroke-linecap: round;
     stroke-linejoin: round;
   }

@@ -427,50 +427,60 @@
       </div>
     </div>
 
-    <form class="contact-form" (submit)="$event.preventDefault()">
-      <div class="form-row">
+    <div class="contact-form-col">
+      @if (submitted) {
+        <div class="success-msg">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
+          Merci&nbsp;! Votre message a bien été envoyé.
+        </div>
+      }
+      @if (!submitted) {
+      <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <div class="form-row">
+          <label>
+            <span>Nom</span>
+            <input type="text" placeholder="Votre nom" [(ngModel)]="form.nom" name="nom" required />
+          </label>
+          <label>
+            <span>Prénom</span>
+            <input type="text" placeholder="Votre prénom" [(ngModel)]="form.prenom" name="prenom" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            <span>Email</span>
+            <input type="email" placeholder="votre@email.com" [(ngModel)]="form.email" name="email" required />
+          </label>
+          <label>
+            <span>Téléphone</span>
+            <input type="tel" placeholder="+212 6XX XXX XXX" [(ngModel)]="form.telephone" name="telephone" />
+          </label>
+        </div>
         <label>
-          <span>Nom</span>
-          <input type="text" placeholder="Votre nom" />
+          <span>Objet</span>
+          <select [(ngModel)]="form.objet" name="objet" required>
+            <option value="">Sélectionnez un objet</option>
+            <option>BET Structure</option>
+            <option>Diagnostic technique</option>
+            <option>Maîtrise d'œuvre</option>
+            <option>Autre demande</option>
+          </select>
         </label>
         <label>
-          <span>Prénom</span>
-          <input type="text" placeholder="Votre prénom" />
+          <span>Message</span>
+          <textarea placeholder="Décrivez votre projet ou besoin..." [(ngModel)]="form.message" name="message" required></textarea>
         </label>
-      </div>
-      <div class="form-row">
-        <label>
-          <span>Email</span>
-          <input type="email" placeholder="votre@email.com" />
-        </label>
-        <label>
-          <span>Téléphone</span>
-          <input type="tel" placeholder="+212 6XX XXX XXX" />
-        </label>
-      </div>
-      <label>
-        <span>Objet</span>
-        <select>
-          <option value="">Sélectionnez un objet</option>
-          <option>BET Structure</option>
-          <option>Diagnostic technique</option>
-          <option>Maîtrise d'œuvre</option>
-          <option>Autre demande</option>
-        </select>
-      </label>
-      <label>
-        <span>Message</span>
-        <textarea placeholder="Décrivez votre projet ou besoin..."></textarea>
-      </label>
-      <div class="form-submit">
-        <button type="submit" class="btn-submit">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <line x1="22" y1="2" x2="11" y2="13" />
-            <polygon points="22 2 15 22 11 13 2 9 22 2" />
-          </svg>
-          Envoyer le message
-        </button>
-      </div>
-    </form>
+        <div class="form-submit">
+          <button type="submit" class="btn-submit" [disabled]="contactForm.invalid">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+            Envoyer le message
+          </button>
+        </div>
+      </form>
+      }
+    </div>
   </div>
 </section>

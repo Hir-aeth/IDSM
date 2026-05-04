@@ -6,7 +6,7 @@
 
 <app-footer />
 
-<button class="scroll-top" (click)="scrollToTop()" title="Retour en haut" aria-label="Retour en haut">
+<button class="scroll-top" [class.visible]="showScrollTop" (click)="scrollToTop()" title="Retour en haut" aria-label="Retour en haut">
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <path d="M18 15l-6-6-6 6" />
   </svg>
