@@ -57,9 +57,13 @@
     margin-bottom: 20px;
 
     svg {
-      width: 50px;
-      height: 50px;
-      fill: rgba(255, 255, 255, 0.75);
+      width: 32px;
+      height: 32px;
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
   }
 
