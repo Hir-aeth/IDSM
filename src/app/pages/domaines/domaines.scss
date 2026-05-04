@@ -1,8 +1,8 @@
 /* ── HERO ── */
 .domaines-hero {
-  background:
-    linear-gradient(to bottom, rgba(8, 15, 30, 0.74), rgba(8, 15, 30, 0.9)),
-    url('/images/thumb-architecture.jpg') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--navy-deep);
   padding: 120px 0 60px;
   color: var(--white);
   border-bottom: 1px solid rgba(201, 168, 76, 0.14);

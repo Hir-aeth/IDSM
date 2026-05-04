@@ -1,14 +1,9 @@
 /* Hero */
 .hero {
   min-height: 100vh;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(8, 15, 30, 0.65) 0%,
-      rgba(8, 15, 30, 0.75) 60%,
-      rgba(8, 15, 30, 0.92) 100%
-    ),
-    url('/images/hero-bg.jpg') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--navy-deep);
   padding: 120px 0 80px;
   color: var(--white);
   display: flex;
