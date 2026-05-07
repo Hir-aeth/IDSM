@@ -13,6 +13,6 @@ export class About implements OnInit {
   private meta = inject(Meta);
 
   ngOnInit() {
-    this.meta.addTag({ name: 'description', content: "Découvrez IDSM, bureau d'études techniques au Maroc. Expertise reconnue en structure, diagnostic et maîtrise d'œuvre pour vos projets de construction et rénovation." });
+    this.meta.updateTag({ name: 'description', content: "Découvrez IDSM, bureau d'études techniques au Maroc. Expertise reconnue en structure, diagnostic et maîtrise d'œuvre pour vos projets de construction et rénovation." });
   }
 }

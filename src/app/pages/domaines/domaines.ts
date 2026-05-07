@@ -15,6 +15,6 @@ export class Domaines implements OnInit {
   readonly heroBg = "linear-gradient(to bottom, rgba(8,15,30,0.74), rgba(8,15,30,0.9)), url('images/thumb-architecture.jpg') center/cover no-repeat";
 
   ngOnInit() {
-    this.meta.addTag({ name: 'description', content: "IDSM intervient dans 8 domaines : bâtiment, routes, génie civil, logements, santé, tertiaire, infrastructures sportives, scolaires et culturels au Maroc." });
+    this.meta.updateTag({ name: 'description', content: "IDSM intervient dans 8 domaines : bâtiment, routes, génie civil, logements, santé, tertiaire, infrastructures sportives, scolaires et culturels au Maroc." });
   }
 }

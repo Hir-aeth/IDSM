@@ -21,7 +21,7 @@ export class Home implements OnInit {
   loading = false;
 
   ngOnInit() {
-    this.meta.addTag({ name: 'description', content: "IDSM — Bureau d'études techniques au Maroc. Expertise en BET Structure, diagnostic technique et maîtrise d'œuvre pour vos projets de construction et rénovation à Rabat et tout le Maroc." });
+    this.meta.updateTag({ name: 'description', content: "IDSM — Bureau d'études techniques au Maroc. Expertise en BET Structure, diagnostic technique et maîtrise d'œuvre pour vos projets de construction et rénovation à Rabat et tout le Maroc." });
   }
 
   async onSubmit() {
