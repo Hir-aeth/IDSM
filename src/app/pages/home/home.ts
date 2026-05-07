@@ -24,6 +24,10 @@ export class Home implements OnInit {
     this.meta.updateTag({ name: 'description', content: "IDSM — Bureau d'études techniques au Maroc. Expertise en BET Structure, diagnostic technique et maîtrise d'œuvre pour vos projets de construction et rénovation à Rabat et tout le Maroc." });
   }
 
+  scrollToSection(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   async onSubmit() {
     this.loading = true;
     try {
