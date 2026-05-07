@@ -1,0 +1,12 @@
+<div class="cookie-banner" [class.visible]="visible">
+  <div class="cookie-content">
+    <p class="cookie-text">
+      Nous utilisons des cookies pour améliorer votre expérience de navigation.
+      <a routerLink="/cookies" class="cookie-link">En savoir plus</a>
+    </p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn-refuse" (click)="refuse()">Tout refuser</button>
+      <button class="cookie-btn cookie-btn-accept" (click)="accept()">Accepter</button>
+    </div>
+  </div>
+</div>
