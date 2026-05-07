@@ -27,7 +27,18 @@ export const routes: Routes = [
     title: "Contact - IDSM — Bureau d'études techniques"
   },
   {
+    path: 'cgu',
+    loadComponent: () => import('./pages/cgu/cgu').then(m => m.Cgu),
+    title: "Conditions Générales d'Utilisation - IDSM — Bureau d'études techniques"
+  },
+  {
+    path: 'cookies',
+    loadComponent: () => import('./pages/cookies/cookies').then(m => m.Cookies),
+    title: "Politique de Cookies - IDSM — Bureau d'études techniques"
+  },
+  {
     path: '**',
-    redirectTo: ''
+    loadComponent: () => import('./pages/not-found/not-found').then(m => m.NotFound),
+    title: "Page non trouvée - IDSM — Bureau d'études techniques"
   }
 ];
