@@ -116,6 +116,15 @@ a { text-decoration: none; color: inherit; }
   width: 100%;
 }
 
+/* ── Spinner for form buttons ── */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  animation: spin 0.9s linear infinite;
+}
+
 /* ── Scroll-to-top button ── */
 .scroll-top {
   position: fixed;

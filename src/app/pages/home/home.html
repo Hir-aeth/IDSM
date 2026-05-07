@@ -155,7 +155,7 @@
   <div class="container identity-grid">
     <div class="identity-left">
       <div class="identity-media">
-        <img src="images/img-bet-6.jpg" alt="Ingénieurs IDSM sur chantier" />
+        <img src="images/img-bet-6.jpg" alt="Ingénieurs IDSM sur chantier" loading="lazy" />
       </div>
       <div class="identity-copy">
         <span class="section-tag">Notre identité</span>
@@ -259,6 +259,7 @@
         <img
           src="images/thumb-architecture.jpg"
           alt="Bâtiments administratifs"
+          loading="lazy"
         />
         <div class="domain-card-body">
           <h3>Bureau d'études bâtiment</h3>
@@ -274,6 +275,7 @@
         <img
           src="images/thumb-bet-22.jpg"
           alt="Routes"
+          loading="lazy"
         />
         <div class="domain-card-body">
           <h3>Expert en routes</h3>
@@ -289,6 +291,7 @@
         <img
           src="images/thumb-bet-18.jpg"
           alt="Logements et Santé"
+          loading="lazy"
         />
         <div class="domain-card-body">
           <h3>Expert en Logements et Santé</h3>
@@ -304,6 +307,7 @@
         <img
           src="images/thumb-bet-12.jpg"
           alt="Infrastructures sportives"
+          loading="lazy"
         />
         <div class="domain-card-body">
           <h3>Infrastructures sportives</h3>
@@ -319,6 +323,7 @@
         <img
           src="images/thumb-bet-11.jpg"
           alt="Bâtiments tertiaires et industriels"
+          loading="lazy"
         />
         <div class="domain-card-body">
           <h3>Bâtiments tertiaires et industriels</h3>
@@ -334,6 +339,7 @@
         <img
           src="images/thumb-bet-14.jpg"
           alt="Logements et structures de santé"
+          loading="lazy"
         />
         <div class="domain-card-body">
           <h3>Logements et structures de santé</h3>
@@ -433,8 +439,17 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
           Merci&nbsp;! Votre message a bien été envoyé.
         </div>
+      } @else if (error) {
+        <div class="error-msg">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="15" y1="9" x2="9" y2="15" />
+            <line x1="9" y1="9" x2="15" y2="15" />
+          </svg>
+          Une erreur s'est produite. Veuillez réessayer ou nous contacter directement par email.
+        </div>
       }
-      @if (!submitted) {
+      @if (!submitted && !error) {
       <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
         <div class="form-row">
           <label>
@@ -471,12 +486,18 @@
           <textarea placeholder="Décrivez votre projet ou besoin..." [(ngModel)]="form.message" name="message" required></textarea>
         </label>
         <div class="form-submit">
-          <button type="submit" class="btn-submit" [disabled]="contactForm.invalid">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-            Envoyer le message
+          <button type="submit" class="btn-submit" [disabled]="contactForm.invalid || loading">
+            @if (loading) {
+              <svg class="spinner" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="31.4 31.4" stroke-linecap="round" />
+              </svg>
+            } @else {
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            }
+            {{ loading ? 'Envoi en cours...' : 'Envoyer le message' }}
           </button>
         </div>
       </form>

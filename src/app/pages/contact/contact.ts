@@ -20,8 +20,26 @@ export class Contact {
   };
 
   submitted = false;
+  error = false;
+  loading = false;
 
-  onSubmit() {
-    this.submitted = true;
+  async onSubmit() {
+    this.loading = true;
+    try {
+      const resp = await fetch('https://formspree.io/f/xnjwbppp', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.form)
+      });
+      if (resp.ok) {
+        this.submitted = true;
+      } else {
+        this.error = true;
+      }
+    } catch {
+      this.error = true;
+    } finally {
+      this.loading = false;
+    }
   }
 }
